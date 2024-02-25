@@ -28,10 +28,9 @@ hr {
 
 .app-root {
     display: grid;
-    grid-template-columns: minmax(200px, 30%) auto;
-    grid-template-rows: 80px auto;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    width: min(90%, 850px);
+    width: 90%;
     margin: 0 auto;
-    padding-bottom: 80px;
+    padding: 80px 0;
 }
