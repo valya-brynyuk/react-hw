@@ -1,8 +1,12 @@
-import Alert from "./components/Alert/Alert.jsx";
+import ListGroup from "./components/ListGroup/ListGroup.jsx";
+
 function App() {
 
   return (
-    <Alert type="primary" text="what is love?" />
+    <ListGroup>
+      <p>one</p>
+      <p>two</p>
+    </ListGroup>
   )
 }
 
