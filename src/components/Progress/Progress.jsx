@@ -1,8 +1,8 @@
 import React from "react";
 
 class Progress extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     if (!Number.isFinite(this.props.percentage)) {
       throw new Error('Percentage must be a valid number');
