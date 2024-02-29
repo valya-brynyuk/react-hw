@@ -1,9 +1,8 @@
-import Progress from "./components/Progress/Progress.jsx";
-
+import Alert from "./components/Alert/Alert.jsx";
 function App() {
 
   return (
-    <Progress percentage={10}/>
+    <Alert type="primary" text="what is love?" />
   )
 }
 
