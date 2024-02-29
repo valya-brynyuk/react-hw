@@ -1,12 +1,9 @@
-import ListGroup from "./components/ListGroup/ListGroup.jsx";
+import BtnGroup from "./components/BtnGroup/BtnGroup.jsx";
 
 function App() {
 
   return (
-    <ListGroup>
-      <p>one</p>
-      <p>two</p>
-    </ListGroup>
+    <BtnGroup />
   )
 }
 
