@@ -1,9 +1,13 @@
-import BtnGroup from "./components/BtnGroup/BtnGroup.jsx";
+import Carousel from "./components/Carousel/Carousel.jsx";
 
 function App() {
 
   return (
-    <BtnGroup />
+    <Carousel images={[
+      '/image1.jpg',
+      '/image2.jpg',
+      '/image3.jpg',
+    ]}/>
   )
 }
 
