@@ -1,13 +1,9 @@
-import Carousel from "./components/Carousel/Carousel.jsx";
+import Collapse from "./components/Collapse/Collapse.jsx";
 
 function App() {
 
   return (
-    <Carousel images={[
-      '/image1.jpg',
-      '/image2.jpg',
-      '/image3.jpg',
-    ]}/>
+    <Collapse text={'collapse me'} opened={false}/>
   )
 }
 
