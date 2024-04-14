@@ -2,14 +2,12 @@ import React from "react";
 
 import MarkdownEditor from "./components/MarkdownEditor/MarkdownEditor.jsx";
 
+const App = () => {
 
-export default class App extends React.Component {
+  return (
+    <MarkdownEditor onContentChange={console.log} initialValue={'Hello World'}/>
+  );
 
-  render() {
-
-    return (
-      <MarkdownEditor onContentChange={console.log} initialValue={'Hello World'} />
-    );
-
-  }
 }
+
+export default App;

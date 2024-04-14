@@ -1,52 +1,45 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import '@toast-ui/editor/dist/toastui-editor.css';
 import Editor from '@toast-ui/editor';
 
-class MarkdownEditor extends React.Component {
-  #editor = null;
-  #myRef = null;
-  #debounceDescriptor = 0;
+const MarkdownEditor = (props) => {
+  let editor = null;
+  const myRef = useRef();
+  let debounceDescriptor = 0;
 
-
-  constructor(props) {
-    super(props);
-    if (!props.onContentChange || typeof props.onContentChange !== "function") {
-      throw new Error("The provided onContentChange should be a function");
-    }
-    this.#myRef = React.createRef();
-
+  if (!props.onContentChange || typeof props.onContentChange !== "function") {
+    throw new Error("The provided onContentChange should be a function");
   }
 
-  editorChangeHandler = () => {
-    clearTimeout(this.#debounceDescriptor);
-    this.#debounceDescriptor = setTimeout(() => {
-      const content = this.#editor.getMarkdown();
-      this.props.onContentChange(content);
+  const editorChangeHandler = () => {
+    clearTimeout(debounceDescriptor);
+    debounceDescriptor = setTimeout(() => {
+      const content = editor.getMarkdown();
+      props.onContentChange(content);
     }, 400);
 
   }
 
-  componentDidMount() {
-    this.#editor = new Editor({
-      el: this.#myRef.current,
+  useEffect(() => {
+    editor = new Editor({
+      el: myRef.current,
       hideModeSwitch: true,
-      initialValue: this.props.initialValue,
+      initialValue: props.initialValue,
     });
 
-    this.#editor.addHook('change', this.editorChangeHandler);
-  }
+    editor.addHook('change', editorChangeHandler);
 
-  componentWillUnmount() {
-    this.#editor.removeHook('change');
-    this.#editor.destroy();
-    this.#editor = null;
-  }
+    return () => {
+      editor.removeHook('change');
+      editor.destroy();
+      editor = null;
+    }
+  }, []);
 
-  render() {
-    return (
-      <div ref={this.#myRef}></div>
-    );
-  }
+
+  return (
+    <div ref={myRef}></div>
+  );
 }
 
 export default MarkdownEditor;
