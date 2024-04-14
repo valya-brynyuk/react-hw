@@ -27,8 +27,7 @@ hr {
 }
 
 .app-root {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: block;
     gap: 1rem;
     width: 90%;
     margin: 0 auto;
