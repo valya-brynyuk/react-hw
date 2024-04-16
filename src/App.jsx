@@ -1,35 +1,27 @@
-import React from "react";
+import React, {useEffect} from "react";
 import PostCatalog from "./components/PostCatalog/PostCatalog.jsx";
 import {getPosts} from "./services/posts.js";
 
-export default class App extends React.Component {
-  #abortController = null;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: []
-    };
-  }
-
-  componentDidMount() {
-    this.#abortController = new AbortController();
-    getPosts(this.#abortController).then(posts => {
-      this.setState({posts});
+const App = () => {
+  const [posts, setPosts] = React.useState([]);
+  let abortController = null;
+  useEffect(() => {
+    abortController = new AbortController();
+    getPosts(abortController).then(data => {
+      setPosts(data)
     }).catch(alert);
-  }
-
-  componentWillUnmount() {
-    if (this.#abortController) {
-      this.#abortController.abort();
+    return () => {
+      if (abortController) {
+        abortController.abort();
+      }
     }
-  }
+  }, []);
 
-  render() {
-    return (
-      <PostCatalog posts={this.state.posts}/>
-    );
-  }
+  return (
+    <PostCatalog posts={posts}/>
+  );
 
 };
 
+export default App;
