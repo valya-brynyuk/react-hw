@@ -1,13 +1,35 @@
 import React from "react";
+import PostCatalog from "./components/PostCatalog/PostCatalog.jsx";
+import {getPosts} from "./services/posts.js";
 
-import MarkdownEditor from "./components/MarkdownEditor/MarkdownEditor.jsx";
+export default class App extends React.Component {
+  #abortController = null;
 
-const App = () => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: []
+    };
+  }
 
-  return (
-    <MarkdownEditor onContentChange={console.log} initialValue={'Hello World'}/>
-  );
+  componentDidMount() {
+    this.#abortController = new AbortController();
+    getPosts(this.#abortController).then(posts => {
+      this.setState({posts});
+    }).catch(alert);
+  }
 
-}
+  componentWillUnmount() {
+    if (this.#abortController) {
+      this.#abortController.abort();
+    }
+  }
 
-export default App;
+  render() {
+    return (
+      <PostCatalog posts={this.state.posts}/>
+    );
+  }
+
+};
+
