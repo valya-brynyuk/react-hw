@@ -1,27 +1,12 @@
 import React, {useEffect} from "react";
-import PostCatalog from "./components/PostCatalog/PostCatalog.jsx";
-import {getPosts} from "./services/posts.js";
+import {RoutesMapping} from "./pages/RoutesMapping.jsx";
+import {BrowserRouter} from "react-router-dom";
 
-
-const App = () => {
-  const [posts, setPosts] = React.useState([]);
-  let abortController = null;
-  useEffect(() => {
-    abortController = new AbortController();
-    getPosts(abortController).then(data => {
-      setPosts(data)
-    }).catch(alert);
-    return () => {
-      if (abortController) {
-        abortController.abort();
-      }
-    }
-  }, []);
-
+export const App = () => {
   return (
-    <PostCatalog posts={posts}/>
+    <BrowserRouter>
+      <RoutesMapping/>
+    </BrowserRouter>
   );
 
 };
-
-export default App;

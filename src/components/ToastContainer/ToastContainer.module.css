@@ -1,0 +1,7 @@
+.wrapper {
+    position: fixed;
+    top: 3rem;
+    right: 2rem;
+    max-height: 90%;
+    overflow-y: auto;
+}
