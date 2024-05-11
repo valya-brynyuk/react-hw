@@ -1,0 +1,10 @@
+.image {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.description:global(.MuiTypography-root),
+.description {
+    font-size: 1.4rem;
+}

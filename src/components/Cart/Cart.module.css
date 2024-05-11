@@ -1,0 +1,10 @@
+.btn {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.popover {
+    padding: 1rem 2rem;
+}

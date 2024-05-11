@@ -1,0 +1,7 @@
+.slide {
+
+}
+
+:global(.swiper-autoheight) .slide:global(.swiper-slide) {
+    height: 100%;
+}

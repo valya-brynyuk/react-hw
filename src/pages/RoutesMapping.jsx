@@ -1,5 +1,5 @@
 import {Route, Routes} from "react-router-dom";
-import routesArray from './routesMapping.js';
+import routesArray from '../routes/routesMapping.js';
 import {memo} from "react";
 
 export const RoutesMapping = memo(() => {

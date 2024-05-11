@@ -1,0 +1,17 @@
+.image:global(.MuiCardMedia-media ) {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.link {
+    color: initial;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}

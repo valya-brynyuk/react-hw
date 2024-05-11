@@ -1,0 +1,13 @@
+.footer {
+    background-color: #fff;
+    padding: 3rem 0;
+}
+
+.footerDivider,
+.footerDivider:global(.MuiDivider-root) {
+    margin-top: 4rem;
+}
+
+.copyright {
+    font-size: 1.4rem;
+}

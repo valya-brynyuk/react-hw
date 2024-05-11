@@ -1,0 +1,14 @@
+.content {
+    max-height: 50px;
+    overflow: hidden;
+}
+
+.text {
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+.button:global(.MuiButton-root) {
+    padding: 0;
+    font-size: 1.4rem;
+}

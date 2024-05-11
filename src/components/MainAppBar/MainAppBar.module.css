@@ -1,0 +1,30 @@
+.logoBlock {
+    display: flex;
+    align-content: center;
+    gap: 2rem;
+}
+
+.logo {
+    height:auto;
+    width: 141px;
+    object-fit: contain;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.link:global(.MuiButton-root),
+.link :global(.MuiChip-label) {
+    font-size: 1.4rem;
+}
+
+.wrapperInner {
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-content: center;
+}

@@ -1,0 +1,15 @@
+.wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+.card:global(.MuiPaper-rounded) {
+    border-radius: 16px;
+}
+
+.img:global(.MuiCardMedia-root),
+.img {
+    object-fit: contain;
+    width: auto;
+    padding: 5px;
+}
