@@ -3,6 +3,7 @@ import ProductPage from "../pages/ProductPage/index.js";
 import {routes} from "./routes.js";
 import CategoryPage from "../pages/CategoryPage/index.js";
 import CartPage from "../pages/CartPage/index.js";
+import PageNotFound from "../pages/PageNotFound/index.js";
 
 export default [
   {
@@ -20,5 +21,9 @@ export default [
   {
     path: routes.category(':category'),
     component: CategoryPage,
+  },
+  {
+    path: '*',
+    component: PageNotFound,
   }
 ]
