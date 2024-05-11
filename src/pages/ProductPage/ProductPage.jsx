@@ -25,7 +25,7 @@ export const ProductPage = (props) => {
   }, [productResp]);
 
   const addBtnClickHandler = () => {
-    dispatch(addToCart(props.product));
+    dispatch(addToCart(productResp.data));
     dispatch(addToast('Item added successfully.'));
   }
 
